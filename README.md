@@ -1,6 +1,6 @@
 # databricks_repo
 
-Question 1:
+**Question 1:**
 
 1.Created three folders:
 
@@ -33,7 +33,7 @@ Stored as a delta table (/silver/Employee_info/dim_employee).
 Conducted various analytics on the data.
 Stored analytics results in /gold/employee/fact_employee.
 
-Question 2:
+**Question 2:**
 
 1.Fetched data from API (https://reqres.in/api/users?page=2) iteratively until no more data is available.
 
