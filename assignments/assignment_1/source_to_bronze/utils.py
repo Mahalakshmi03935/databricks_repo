@@ -1,7 +1,7 @@
 # Databricks notebook source
 # DBTITLE 1,Importing necessary libraries
 from pyspark.sql.types import StructType,StringType,StructField,IntegerType
-from pyspark.sql.functions import current_date
+from pyspark.sql.functions import current
 
 # COMMAND ----------
 

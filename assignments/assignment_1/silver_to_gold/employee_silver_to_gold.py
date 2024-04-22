@@ -3,16 +3,16 @@ from pyspark.sql.functions import desc, count, avg
 
 # COMMAND ----------
 
-# MAGIC %run /Users/kalaiarasan.j@diggibyte.com/assignments/assignment_1/source_to_bronze/utils
+# MAGIC %run /Users/rajamahalakshmi.b@diggibyte.com/src/assignment_1/source_to_bronze/utils
 # MAGIC
 
 # COMMAND ----------
 
-# MAGIC %run /Users/kalaiarasan.j@diggibyte.com/assignments/assignment_1/bronze_to_silver/employee_bronze_to_silver/
+# MAGIC %run /Users/rajamahalakshmi.b@diggibyte.com/src/assignment_1/bronze_to_silver/employee_bronze_to_silver/
 
 # COMMAND ----------
 
-employee_df = spark.read.format("delta").load('dbfs:/FileStore/assignments/question1/silver/employee_info/dim_employee')
+employee_df = spark.read.format("delta").load('dbfs:/FileStore/src/question1/silver/employee_info/dim_employee')
 display(employee_df)
 
 # COMMAND ----------
@@ -39,9 +39,9 @@ display(avg_age_employee)
 
 # COMMAND ----------
 
-employee_with_date_df.write.format("parquet").mode("overwrite").option("replaceWhere", "load_date = '2024-04-16'").save("/FileStore/assignments/gold/employee/table_name")
+employee_with_date_df.write.format("parquet").mode("overwrite").option("replaceWhere", "load_date = '2024-04-16'").save("/FileStore/src/gold/employee/table_name")
 
 # COMMAND ----------
 
-test_df = spark.read.parquet('dbfs:/FileStore/assignments/gold/employee/table_name/')
+test_df = spark.read.parquet('dbfs:/FileStore/src/gold/employee/table_name/')
 display(test_df)

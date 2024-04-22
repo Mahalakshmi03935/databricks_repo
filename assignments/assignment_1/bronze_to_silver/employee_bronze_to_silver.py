@@ -32,9 +32,9 @@ department_custom_schema = StructType([
 
 # COMMAND ----------
 
-employee_csv_path = '''dbfs:/FileStore/assignments/assignment_1/source_to_bronze/employee_df.csv/part-00000-tid-6103212535810671775-8064e420-0dbc-4c94-8620-af7f9d179e51-70-1-c000.csv'''
-country_csv_path = '''dbfs:/FileStore/assignments/assignment_1/source_to_bronze/country_df.csv/part-00000-tid-5901953138618445503-d99ef960-168a-4cb9-b869-a936e301d364-66-1-c000.csv'''
-department_csv_path = '''dbfs:/FileStore/assignments/assignment_1/source_to_bronze/department_df.csv/part-00000-tid-6078041443976848379-7a79f1ff-78f6-405e-8bac-929dafc479b3-69-1-c000.csv'''
+employee_csv_path = '''dbfs:/FileStore/src/assignment_1/source_to_bronze/employee_df.csv/part-00000-tid-6103212535810671775-8064e420-0dbc-4c94-8620-af7f9d179e51-70-1-c000.csv'''
+country_csv_path = '''dbfs:/FileStore/src/assignment_1/source_to_bronze/country_df.csv/part-00000-tid-5901953138618445503-d99ef960-168a-4cb9-b869-a936e301d364-66-1-c000.csv'''
+department_csv_path = '''dbfs:/FileStore/src/assignment_1/source_to_bronze/department_df.csv/part-00000-tid-6078041443976848379-7a79f1ff-78f6-405e-8bac-929dafc479b3-69-1-c000.csv'''
 
 # COMMAND ----------
 
@@ -87,4 +87,4 @@ spark.sql('use employee_info')
 
 # COMMAND ----------
 
-employee_df.write.option('path', 'dbfs:/FileStore/assignments/question1/silver/employee_info/dim_employee').saveAsTable('dim_employee')
+employee_df.write.option('path', 'dbfs:/FileStore/src/question1/silver/employee_info/dim_employee').saveAsTable('dim_employee')

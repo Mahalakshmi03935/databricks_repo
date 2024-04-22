@@ -5,9 +5,9 @@
 
 # read all csv
 
-employee_path = "dbfs:/FileStore/assignments/assignment_1/resources/Employee_Q1.csv"
-department_path = "dbfs:/FileStore/assignments/assignment_1/resources/Department_Q1.csv"
-country_path= "dbfs:/FileStore/assignments/assignment_1/resources/Country_Q1.csv"
+employee_path = "dbfs:/FileStore/src/assignment_1/resources/Employee_Q1.csv"
+department_path = "dbfs:/FileStore/src/assignment_1/resources/Department_Q1.csv"
+country_path= "dbfs:/FileStore/src/assignment_1/resources/Country_Q1.csv"
 
 country_df=read_csv_data(country_path)
 country_df.display()
@@ -21,9 +21,9 @@ employee_df.display()
 
 # write all csv files
 
-write_csv_file(country_df,'dbfs:/FileStore/assignments/assignment_1/source_to_bronze/country_df.csv')
-write_csv_file(department_df,'dbfs:/FileStore/assignments/assignment_1/source_to_bronze/department_df.csv')
-write_csv_file(employee_df,'dbfs:/FileStore/assignments/assignment_1/source_to_bronze/employee_df.csv')
+write_csv_file(country_df,'dbfs:/FileStore/src/assignment_1/source_to_bronze/country_df.csv')
+write_csv_file(department_df,'dbfs:/FileStore/src/assignment_1/source_to_bronze/department_df.csv')
+write_csv_file(employee_df,'dbfs:/FileStore/src/assignment_1/source_to_bronze/employee_df.csv')
 
 # COMMAND ----------
 
@@ -41,4 +41,4 @@ write_delta_table(employee_df,"Employee_info","dim_employee","EmployeeID","/silv
 
 # COMMAND ----------
 
-display(dbutils.fs.ls('dbfs:/FileStore/assignments/assignment_1/source_to_bronze'))
+display(dbutils.fs.ls('dbfs:/FileStore/src/assignment_1/source_to_bronze'))

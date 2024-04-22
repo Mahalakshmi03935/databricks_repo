@@ -83,12 +83,12 @@ display(loaded_date)
 
 # COMMAND ----------
 
-loaded_date.write.format('delta').mode('overwrite').save('dbfs:/FileStore/assignments/assignment_2/site_info/person_info')
+loaded_date.write.format('delta').mode('overwrite').save('dbfs:/FileStore/src/assignment_2/site_info/person_info')
      
 
 # COMMAND ----------
 
-testing_df = spark.read.format('delta').load('dbfs:/FileStore/assignments/assignment_2/site_info/person_info')
+testing_df = spark.read.format('delta').load('dbfs:/FileStore/src/assignment_2/site_info/person_info')
 display(testing_df)
 
 # COMMAND ----------
